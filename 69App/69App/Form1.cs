@@ -47,7 +47,6 @@ namespace _69App
             double windowPbDiff = (double)Size.Width - picBoxSize.Width;
             double imageWhRatio = (double)image.Width / image.Height;
             double PbNewW = picBoxSize.Height * imageWhRatio;
-            Size = new Size((int)(PbNewW + windowPbDiff), Size.Height);
             
             mainUC.UpperImage = image;
             try
@@ -65,6 +64,8 @@ namespace _69App
             {
                 MessageBox.Show(ex.Message);
             }
+
+            Size = new Size((int)(PbNewW + windowPbDiff), Size.Height);
         }
 
         Bitmap GetImage(string path)
